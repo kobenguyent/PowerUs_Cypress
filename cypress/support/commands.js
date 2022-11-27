@@ -1,9 +1,9 @@
-import {Popup} from "../support/PageObjects/Popup";
-import {TopNav} from "../support/PageObjects/TopNav";
-import {Blog} from "../support/PageObjects/Blog";
-import {Register} from "../support/PageObjects/Register";
-import {Result} from "../support/PageObjects/Result";
-import {BottomNav} from "../support/PageObjects/BottomNav";
+import {Popup} from "./PageObjects/Popup";
+import {TopNav} from "./PageObjects/TopNav";
+import {Blog} from "./PageObjects/Blog";
+import {Register} from "./PageObjects/Register";
+import {Result} from "./PageObjects/Result";
+import {BottomNav} from "./PageObjects/BottomNav";
 
 const popup = new Popup();
 const topNav = new TopNav();
@@ -61,9 +61,24 @@ Cypress.Commands.add('seeNegativeDifferenceOfWillingnessToTravel', () => {
 })
 
 Cypress.Commands.add('typeAndWait', (locator, text, waitInSec = 1) => {
-    cy.get(locator).clear().type(text).wait(waitInSec * 1000);
+    cy.get(locator).clear().wait(waitInSec * 1000);
+
+    if (text !== '') {
+        cy.get(locator).type(text).wait(waitInSec * 1000);
+    }
 })
 
 Cypress.Commands.add('logout', () => {
     bottomNav.logout();
+})
+
+Cypress.Commands.add('interceptRequest', (url, method, statusCode) => {
+    cy.intercept({
+        method,
+        url
+    }, {
+        body: 'test does not allow it',
+        statusCode,
+        delayMs: 2000
+    });
 })

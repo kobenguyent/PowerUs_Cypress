@@ -1,7 +1,9 @@
 /// <reference types="cypress" />
 /// <reference types="cypress-xpath" />
 
-import {User} from "./Models/User";
+import {User} from "./cypress/support/Models/User";
+
+type apiMethod = 'POST' | 'GET' | 'UPDATE' | 'DELETE';
 
 declare namespace Cypress {
     interface Chainable<Subject = any> {
@@ -18,6 +20,7 @@ declare namespace Cypress {
         seeNegativeDifferenceOfExperience(),
         seeNegativeDifferenceOfWillingnessToTravel(),
         logout(),
+        interceptRequest(url:string, method:apiMethod, statusCode:number),
         typeAndWait(locator:string, text:string, waitInSec?:number),
     }
 }
