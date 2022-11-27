@@ -52,14 +52,14 @@ Missing baseUrl in compilerOptions. tsconfig-paths will be skipped
   │ Cypress:        11.2.0                                                                         │
   │ Browser:        Electron 106 (headless)                                                        │
   │ Node Version:   v14.18.2 (/Users/trung-thanh/.nvm/versions/node/v14.18.2/bin/node)             │
-  │ Specs:          1 found (salaryChecker.cy.js)                                                  │
+  │ Specs:          1 found (salaryChecker.cy.ts)                                                  │
   │ Searched:       cypress/e2e/**/*.cy.{js,jsx,ts,tsx}                                            │
   └────────────────────────────────────────────────────────────────────────────────────────────────┘
 
 
 ────────────────────────────────────────────────────────────────────────────────────────────────────
                                                                                                     
-  Running:  salaryChecker.cy.js                                                             (1 of 1)
+  Running:  salaryChecker.cy.ts                                                             (1 of 1)
 
 
   Salary Checker
@@ -101,7 +101,7 @@ Missing baseUrl in compilerOptions. tsconfig-paths will be skipped
   │ Screenshots:  0                                                                                │
   │ Video:        true                                                                             │
   │ Duration:     9 minutes, 24 seconds                                                            │
-  │ Spec Ran:     salaryChecker.cy.js                                                              │
+  │ Spec Ran:     salaryChecker.cy.ts                                                              │
   └────────────────────────────────────────────────────────────────────────────────────────────────┘
 
 
@@ -112,7 +112,7 @@ Missing baseUrl in compilerOptions. tsconfig-paths will be skipped
 
        Spec                                              Tests  Passing  Failing  Pending  Skipped  
   ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
-  │ ✔  salaryChecker.cy.js                      09:24       22       22        -        -        - │
+  │ ✔  salaryChecker.cy.ts                      09:24       22       22        -        -        - │
   └────────────────────────────────────────────────────────────────────────────────────────────────┘
     ✔  All specs passed!                        09:24       22       22        -        -        -
 ```

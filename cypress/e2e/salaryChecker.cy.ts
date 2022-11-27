@@ -69,7 +69,7 @@ describe('Salary Checker', () => {
 
       cy.salaryCheck({ state: 'Bayern'});
       const user = new User();
-      user.email = value;
+      user.email = value as string;
       cy.openAccount(user);
       cy.contains(data.error.invalidEmail);
     });
@@ -124,7 +124,7 @@ describe('Salary Checker', () => {
 
   for (const [key, value] of Object.entries(data.statusCode.startsWithFour)) {
     it(`should see the error when BE is returned ${value}`, () => {
-      cy.interceptRequest(url.api.register, 'POST', value);
+      cy.interceptRequest(url.api.register, 'POST', value as number);
 
       cy.salaryCheck({ state: 'Bayern'});
       const user = new User();
@@ -135,7 +135,7 @@ describe('Salary Checker', () => {
 
   for (const [key, value] of Object.entries(data.statusCode.startsWithFive)) {
     it(`should see the error when BE is returned ${value}`, () => {
-      cy.interceptRequest(url.api.register, 'POST', value);
+      cy.interceptRequest(url.api.register, 'POST', value as number);
 
       cy.salaryCheck({ state: 'Bayern'});
       const user = new User();
